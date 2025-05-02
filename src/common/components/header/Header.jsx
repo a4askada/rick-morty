@@ -2,17 +2,26 @@ import React from "react";
 
 import logo from "../../../assets/img/logo.png";
 import {NavLink} from "react-router";
+import s from "./Header.module.css";
 
 export const Header = () => {
 	return (
-		<div>
+		<div className={`${s.container}`}>
 			<NavLink to={"/"}>
-				<img src={logo} alt="logotype" />
+				<img src={logo} alt="logotype" className={`${s.logo}`} />
 			</NavLink>
-			<NavLink to={"/"}>Home</NavLink>
-			<NavLink to={"/characters"}>Characters</NavLink>
-			<NavLink to={"/locations"}>Locations</NavLink>
-			<NavLink to={"/episodes"}>Episodes</NavLink>
+			<NavLink to={"/"} className={s.headerLink}>
+				Home
+			</NavLink>
+			<NavLink to={"/characters"} className={s.headerLink}>
+				Characters
+			</NavLink>
+			<NavLink to={"/locations"} className={s.headerLink}>
+				Locations
+			</NavLink>
+			<NavLink to={"/episodes"} className={s.headerLink}>
+				Episodes
+			</NavLink>
 		</div>
 	);
 };
